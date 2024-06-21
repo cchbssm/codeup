@@ -2,17 +2,18 @@
 
 int main()
 {
-    int i, j, tmp, arr[5];
-    for(i=0; i<5; i++) scanf("%d", &arr[i]);
-    
-    for(i=1; i<5; i++){
-        tmp=arr[i];
-        for(j=i-1; j>-1 && arr[j]>tmp; j--){
-            arr[j+1]=arr[j];
-        }
-        arr[j+1]=tmp;
+    int n, emax=0, omax=0;
+    for(int i=0; i<7; i++){
+        scanf("%d", &n);
+        if(n%2)
+            if(omax<n) omax=n;
+        if(n%2==0)
+            if(emax<n) emax=n;
     }
-    printf("%d", arr[2]);
+    
+    for(int i=0; i<7; i++){
+    }
+    printf("%d", omax+emax);
     
     return 0;
 }
