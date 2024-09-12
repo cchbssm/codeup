@@ -1,22 +1,17 @@
 //[기초-재귀함수] 재귀로 각 자리 수의 합 리턴하기
 #include <stdio.h>
 
-int res=0;
-
-void dig(long long int n);
+long long int dig(long long int n)
+{
+   if(n == 0) return 0;
+   return (n%10)+dig(n/10);
+}
 
 int main()
 {
    long long int n;
    scanf("%lld", &n);
-   dig(n);
-   printf("%d", res);
-}
+   printf("%lld", dig(n));
 
-void dig(long long int n)
-{
-   if(n<1) return;
-   res += n % 10;
-   n /= 10;
-   dig(n);
+   return 0;
 }
